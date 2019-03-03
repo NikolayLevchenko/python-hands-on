@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="58c1003c-484a-4591-9977-43c8c7c36d01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/create_tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/create_tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/data.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../rest-api-sections" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-sections" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -170,7 +167,7 @@
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SQLAlchemy" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
@@ -199,16 +196,15 @@
       <updated>1551302852824</updated>
       <workItem from="1551302854687" duration="2908000" />
       <workItem from="1551470608337" duration="6204000" />
-      <workItem from="1551523046653" duration="7886000" />
+      <workItem from="1551523046653" duration="9116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16998000" />
+    <option name="totallyTimeSpent" value="18228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16174497" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
