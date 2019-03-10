@@ -37,7 +37,7 @@
     </column>
     <column id="13" parent="7" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>INTEGER|0s</DataType>
     </column>
     <column id="14" parent="7" name="username">
       <Position>2</Position>
@@ -47,5 +47,9 @@
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
+    <key id="16" parent="7">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>
