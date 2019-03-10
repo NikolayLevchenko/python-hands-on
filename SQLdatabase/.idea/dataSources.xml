@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+<<<<<<< HEAD
     <data-source source="LOCAL" name="data" uuid="c509886b-5773-4c18-ab36-523bb057fed7">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\nlevchenko\PycharmProjects\python-hands-on\SQLdatabase\data.db</jdbc-url>
+=======
+    <data-source source="LOCAL" name="data" uuid="9ec62c17-b2b1-4a91-96dd-2550c64d3fbc">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Nikolay\PycharmProjects\SQLdatabase\code\data.db</jdbc-url>
+>>>>>>> 0e0116c57d154e2aaf433986d3a8dd48b0298ede
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>
