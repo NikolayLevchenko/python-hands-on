@@ -1,11 +1,15 @@
-vowels = set('aeiou')
+import functions
 
-word = input("Provide a word to search for and count vowels...")
+print(functions.search_for_letters("Let's make America great again"))
 
-found = vowels.intersection(set(word))
-
-for vowels in found:
-    print(vowels)
+# vowels = set('aeiou')
+#
+# word = input("Provide a word to search for and count vowels...")
+#
+# found = vowels.intersection(set(word))
+#
+# for vowels in found:
+#     print(vowels)
 
 # skus = {"abcd", "123dc", "abcd", "234bs"}
 #
