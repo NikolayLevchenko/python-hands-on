@@ -10,4 +10,4 @@ def search_for_letters(phrase: str, letters: str = 'aeiou') -> set:
 
 def log_request(req: 'flask_request', res: str) -> None:
     with open('vsearch.log', mode='a') as log:
-        print(req, res, file=log)
+        print(req.form, req.remote_addr, req.user_agent, res, file=log, sep='|')
