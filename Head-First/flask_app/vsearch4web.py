@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request, escape
+from flask import Flask, render_template, request, escape, session
 from functions import help_functions
 from DBcm import UseDatabase
+from checker import check_logged_in
 
 app = Flask(__name__)
+app.secret_key = 'YouWillNeverGuess'
 
 app.config['dbconfig'] = {'host': '127.0.0.1',
                           'user': 'vsearch',
@@ -41,8 +43,18 @@ def do_search() -> 'html':
 def entry_page() -> 'html':
     return render_template('entry.html', the_title='Welcome to search4letters on the web!')
 
+@app.route('/login')
+def do_login() -> str:
+    session['logged_in'] = True
+    return 'You are logged in'
+
+@app.route('/logout')
+def do_logout() -> str:
+    session.pop('logged_in')
+    return 'You are logged out'
 
 @app.route('/viewlog')
+@check_logged_in
 def view_the_log() -> 'html':
     """Display the contents of the log file as HTML table."""
     with UseDatabase(app.config['dbconfig']) as cursor:
@@ -59,3 +71,4 @@ def view_the_log() -> 'html':
 
 if __name__ == '__main__':
     app.run(debug=True)
+
