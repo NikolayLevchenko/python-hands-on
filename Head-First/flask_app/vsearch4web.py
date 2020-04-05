@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, escape, session
 from functions import help_functions
-from DBcm import UseDatabase
+from DBcm import UseDatabase, ConnectionError, CredentialsError, SQLError
 from checker import check_logged_in
 
 app = Flask(__name__)
@@ -30,7 +30,10 @@ def do_search() -> 'html':
     phrase = request.form['phrase']
     letters = request.form['letters']
     results = str(help_functions.search_for_letters(phrase, letters))
-    log_request(request, results)
+    try:
+        log_request(request, results)
+    except Exception as err:
+        print('******Logging failed with the following error:', str(err))
     return render_template('results.html',
                            the_letters=letters,
                            the_phrase=phrase,
@@ -57,17 +60,26 @@ def do_logout() -> str:
 @check_logged_in
 def view_the_log() -> 'html':
     """Display the contents of the log file as HTML table."""
-    with UseDatabase(app.config['dbconfig']) as cursor:
-        _SQL = """select phrase, letters, ip, browser_string, results
-                    from log"""
-        cursor.execute(_SQL)
-        contents = cursor.fetchall()
-    titles = ('Phrase', 'Letters', 'Remote_addr', 'User_agent', 'Results')
-    return render_template('viewlog.html',
-                           the_title='View Log',
-                           the_row_titles=titles,
-                           the_data=contents, )
-
+    try:
+        with UseDatabase(app.config['dbconfig']) as cursor:
+            _SQL = """select phrase, letters, ip, browser_string, results
+                        from log"""
+            cursor.execute(_SQL)
+            contents = cursor.fetchall()
+        titles = ('Phrase', 'Letters', 'Remote_addr', 'User_agent', 'Results')
+        return render_template('viewlog.html',
+                            the_title='View Log',
+                            the_row_titles=titles,
+                            the_data=contents, )
+    except ConnectionError as err:
+        print('Is your database switched on? Error:', str(err))
+    except CredentialsError as err:
+        print('User-id/Password issues. Error:', str(err))
+    except SQLError as err:
+        print('Is your query correct? Error:', str(err))
+    except Exception as err:
+        print('Something went wrong:', str(err))
+    return 'Error'
 
 if __name__ == '__main__':
     app.run(debug=True)
